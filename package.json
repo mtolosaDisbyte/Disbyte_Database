@@ -1,6 +1,35 @@
 {
+  "name": "Disbyte_Database",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js -e js,mjs,json,ejs,css",
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mtolosaDisbyte/Disbyte_Database.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mtolosaDisbyte/Disbyte_Database.git/issues"
+  },
+  "homepage": "https://github.com/mtolosaDisbyte/Disbyte_Database.git#readme",
   "dependencies": {
-    "-": "^0.0.1",
-    "express-generator": "^4.14.1"
+    "bcrypt": "^5.1.0",
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.9",
+    "ejs-lint": "^2.0.0",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "method-override": "^3.0.0",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.20",
+    "sequelize": "^6.32.1",
+    "sequelize-cli": "^6.5.2",
+    "statics": "^0.1.0"
   }
 }

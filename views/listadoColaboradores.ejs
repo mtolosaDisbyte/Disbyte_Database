@@ -1,0 +1,12 @@
+<%- include('./partials/header.ejs') %>
+<h2 class="titulo-2">Listado de Colaboradores</h2>
+<ul class="pelis">
+    <% for (let i = 0; i < colaboradores.length; i++) { %>
+        <li>
+            <a href="/detalle/<%=colaboradores[i].id%>">
+            <%=colaboradores[i].nombre %>
+            </a>
+        </li>
+    <% } %>
+</ul>
+<%- include('./partials/footer') %>

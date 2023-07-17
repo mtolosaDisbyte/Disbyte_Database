@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>Mi sitio!</title>
+        <link rel="stylesheet" href="../stylesheets/style.css">
+    </head>
+    <body>
+        <header>
+            <h1 class="titulo-1">Mi sitio!</h1>
+            <nav class="encabezado">
+                <ul>
+                        <li>
+                            <a href="/">Ver colaboradores</a>
+                        </li>
+                    <% if (user) { %>
+                        <% if (user.rol == 1) { %>
+                            <li>
+                                <a href="/crear">Crear Colaborador</a>
+                            </li>
+                        <% } %>
+                    <% } %>
+                    <% if (user) { %>
+                            <li>
+                                <a href="/users/logout">Cerrar sesión</a>
+                            </li>   
+                    <% }else{ %>
+                            <li>
+                                <a href="/users/registrar">Registrarse</a>
+                            </li>
+                            <li>
+                                <a href="/users/login">Iniciar sesión</a>
+                            </li>
+                    <% } %>
+                </ul>
+            </nav>
+        </header>
