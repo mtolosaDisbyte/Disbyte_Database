@@ -18,6 +18,9 @@ module.exports = function(sequelize, dataTypes) {
         },
         bitlocker_filevault: {
             type: dataTypes.STRING
+        },
+        firewall: {
+            type: dataTypes.STRING
         }
     }
     let config = {

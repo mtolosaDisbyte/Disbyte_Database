@@ -1,0 +1,32 @@
+<%- include('./partials/header.ejs') %>
+<h1 class="titulo-2"><%=colaborador.nombre%></h1>
+<ul class="detalle">
+    <li>
+       Equipo: <%=colaborador.equipo%>
+    </li>
+    <li>
+        Version Win | Os: <%=colaborador.version_win_os%>
+    </li>
+    <li>
+        Bitlocker | filevault: <%=colaborador.bitlocker_filevault%>
+    </li>
+    <li>
+        Firewall: <%=colaborador.firewall%>
+    </li>
+<% if (locals.user) { %>
+    <% if (user.rol == 1) { %>
+     
+        <a class= "editar" href="/editar/<%=colaborador.id%>">
+            <div class="detalle-boton">
+                <button>Editar</button>
+            </div>  
+        </a>
+        
+        <form action="/borrar/<%=colaborador.id%>" method="POST">
+            <p class="detalle-boton">
+                <button type="submit">Borrar</button>
+            </p>
+        </form>
+    <% } %>
+<% } %>
+<%- include('./partials/footer.ejs') %>

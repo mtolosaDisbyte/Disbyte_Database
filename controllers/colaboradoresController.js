@@ -18,6 +18,7 @@ let colaboradoresController = {
         res.redirect("/");
     },
     listado: function (req, res) {
+        console.log(res.locals)
         db.Colaborador.findAll()
             .then(function (colaboradores){
                 res.render('listadoColaboradores', {colaboradores:colaboradores});

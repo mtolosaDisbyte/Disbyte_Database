@@ -1,0 +1,114 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+header{
+    background-color: #253641;
+    padding: 10px 10px 10px 10px;
+
+}
+.titulo-1{
+    background-color: #D3DABE;
+    padding: 15px 0px 15px 5px;
+}
+.titulo-2{
+    background-color: #D3DABE;
+    padding: 15px 0px 15px 5px;
+    margin: 10px 10px 10px 10px;
+}
+header ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+    padding-top: 20px;
+}
+header ul li a{
+    padding: 0%;
+    text-decoration: none;
+    color: black;
+    background-color: #91CAA9;
+    border-radius: 10px;
+    padding: 0.7rem 0.8rem 0.7rem 0.8rem;
+    font-weight: bold;
+}
+form div label{
+    font-weight: bold;
+}
+form div{
+    display: flex;
+    justify-content: center;
+}
+body{
+    background-color: #253641;
+}
+.pelis li{
+    display: flex;
+    flex-direction: row;
+}
+.pelis li a{
+    text-decoration: none;
+    color: black;
+    background-color: #91CAA9;
+    border-radius: 10px;
+    padding: 0.7rem 0.8rem 0.7rem 0.8rem;
+    margin: 5px 0px 5px 10px;
+}
+.detalle{
+        background-color: #D3DABE;
+        list-style: none;
+        padding: 15px 0px 15px 5px;
+        margin: 10px 46vw 10px 10px;
+}
+form div button{
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 10%;
+    height: 2.5rem;
+    color: black;
+    background-color: lightslategray;
+    border: none;
+    border-radius: 0.25rem;   
+    margin-top: 10px;
+}
+button{
+    background-color: lightslategray;
+    border: none;
+    font-weight: bold;
+}
+.editar{
+    text-decoration: none;
+}
+.detalle-boton{
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    text-decoration: none;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 10%;
+    height: 2.5rem;
+    color: black;
+    background-color: lightslategray;
+    border: none;
+    border-radius: 0.25rem;   
+    margin-top: 10px;
+    margin-left: 10px;
+
+}
+footer ul li{
+    display: flex;
+    font-weight: bold;
+    list-style: none;
+    justify-content: center;
+    padding: 5px 0px 2px 0px;
+}
+footer{
+    border-top: 1px solid #ebebeb;
+    margin-top: 15px;
+}
