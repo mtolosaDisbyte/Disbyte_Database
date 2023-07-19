@@ -24,10 +24,7 @@ module.exports = function(sequelize, dataTypes  ) {
             type: dataTypes.INTEGER,
             defaultValue: 0
         },
-        updated_at:{
-            type: dataTypes.DATE,
-            
-        }
+
     }
 
     let config = {

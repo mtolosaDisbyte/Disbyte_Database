@@ -12,7 +12,7 @@
                             <a href="/">Ver colaboradores</a>
                         </li>
                     <% if (locals.user) { %>
-                        <% if (user.rol == 1) { %>
+                        <% if (locals.user.rol == 1) { %>
                             <li>
                                 <a href="/crear">Crear Colaborador</a>
                             </li>

@@ -22,7 +22,6 @@ const controller = {
         db.users.findOne({where:{email:req.body.email}})
             .then((user) => {
                 req.session.user = user
-                console.log(user);
                 if (req.body.cookie){
                     res.cookie('user', req.body.email,{maxAge: 1000 * 60 * 10})
                 }

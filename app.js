@@ -4,6 +4,7 @@ const {join} = require("path");
 const session = require('express-session');
 const method = require('method-override');
 const cookie = require('cookie-parser')
+const sessionMiddleware = require("./middlewares/user")
 
 //server
 app.listen(3000, () => {
@@ -28,9 +29,14 @@ app.use(session({
     saveUninitialized:false,
 }))
 
+app.use(sessionMiddleware)
+
+app.use(cookie())
+
 //Routers
 const colaboradoresRouter = require('./routes/colaboradores');
 const usersRouter = require('./routes/users');
+const middleware = require('./middlewares/userAdmin');
 app.use('/', colaboradoresRouter);
 app.use('/users', usersRouter);
 

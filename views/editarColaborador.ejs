@@ -1,0 +1,52 @@
+<%- include('./partials/header.ejs') %>
+<link rel="stylesheet" href="../stylesheets/style.css">
+
+    <h1 class="titulo-2">Editar colaborador</h1>
+    <form action="/editar/<%=colaborador.id%>" method="POST" id="formulario">
+        <div>
+            <label for="">Nombre</label>
+            <input type="text" name="nombre" value="<%=colaborador.nombre%>" id="nombre">
+            <a id="errorTitulo" class="feedback"></a>
+        </div> 
+        <div>
+            <label for="">Equipo</label>
+            <input type="text" name="equipo" value="<%=colaborador.equipo%>" id="equipo">
+            <a id="errorPremios" class="feedback"></a>
+        </div>
+        <div>
+            <label for="">Duración</label>
+            <input type="number" name="duracion" value="<%=pelicula.length%>" id="duracion">
+            <a id="errorDuracion" class="feedback"></a>
+        </div>
+        <div>
+            <label for="">Rating</label>
+            <input type="number" name="rating" value="<%=pelicula.rating%>" id="rating">
+            <a id="errorRating" class="feedback"></a>
+        </div>
+        <div>
+            <label for="">Fecha de estreno</label>
+            <input type="date" name="fecha_estreno">
+        </div>
+        <div>
+            <label for="">Genero</label>
+            <select name="genre">
+                <% for (let i = 0; i < generos.length; i++) { %>
+                    <% if (generos [i].id == pelicula.genre_id) { %>
+                        <option value="<%= generos[i].id%>" selected>                   
+                            <%=generos[i].name%>                       
+                        </option>
+                    <% } else { %>                     
+                        <option value="<%= generos[i].id%>">                     
+                            <%=generos [i].name%>                        
+                        </option>
+                    <% } %>
+
+                    <% } %>
+            </select>
+        </div> 
+        <div>
+        <button type="submit">Editar!</button>
+        </div>
+    </form>
+
+<%- include('./partials/footer.ejs') %>

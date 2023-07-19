@@ -4,7 +4,7 @@ let colaboradoresController = {
     crear: function (req, res) {
         db.Colaborador.findAll()
             .then(function (generos) {
-                return res.render('creacionColaboradores', {colaboradores:colaboradores});
+                return res.render('creacionColaboradores');
             })
     },
     guardado: function (req, res) {
@@ -18,7 +18,7 @@ let colaboradoresController = {
         res.redirect("/");
     },
     listado: function (req, res) {
-        console.log(res.locals)
+        // console.log(res.locals)
         db.Colaborador.findAll()
             .then(function (colaboradores){
                 res.render('listadoColaboradores', {colaboradores:colaboradores});
@@ -41,7 +41,7 @@ let colaboradoresController = {
             })
     },
     actualizar: function (req, res) {
-        console.log(req.query)
+        //console.log(req.query)
         db.Colaborador.update({
             nombre: req.body.nombre,
             equipo: req.body.equipo,

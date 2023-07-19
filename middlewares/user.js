@@ -4,6 +4,7 @@ const middleware = async (req, res, next) => {
         user = req.session.user
     }
     console.log(user);
+    
     res.locals.user = user
     return next()
 }
