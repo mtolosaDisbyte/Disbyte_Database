@@ -14,36 +14,19 @@
             <a id="errorPremios" class="feedback"></a>
         </div>
         <div>
-            <label for="">Duración</label>
-            <input type="number" name="duracion" value="<%=pelicula.length%>" id="duracion">
+            <label for="">Versión Win | Os</label>
+            <input type="text" name="version_win_os" value="<%=colaborador.version_win_os%>" id="version_win_os">
             <a id="errorDuracion" class="feedback"></a>
         </div>
         <div>
-            <label for="">Rating</label>
-            <input type="number" name="rating" value="<%=pelicula.rating%>" id="rating">
+            <label for="">Bitlocker | Filevault</label>
+            <input type="text" name="bitlocker_filevault" value="<%=colaborador.bitlocker_filevault%>" id="bitlocker_filevault">
             <a id="errorRating" class="feedback"></a>
         </div>
         <div>
-            <label for="">Fecha de estreno</label>
-            <input type="date" name="fecha_estreno">
+            <label for="">Firewall</label>
+            <input type="text" name="firewall" value="<%=colaborador.firewall%>" id="firewall">
         </div>
-        <div>
-            <label for="">Genero</label>
-            <select name="genre">
-                <% for (let i = 0; i < generos.length; i++) { %>
-                    <% if (generos [i].id == pelicula.genre_id) { %>
-                        <option value="<%= generos[i].id%>" selected>                   
-                            <%=generos[i].name%>                       
-                        </option>
-                    <% } else { %>                     
-                        <option value="<%= generos[i].id%>">                     
-                            <%=generos [i].name%>                        
-                        </option>
-                    <% } %>
-
-                    <% } %>
-            </select>
-        </div> 
         <div>
         <button type="submit">Editar!</button>
         </div>

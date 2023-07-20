@@ -30,7 +30,6 @@ app.use(session({
 }))
 
 app.use(sessionMiddleware)
-
 app.use(cookie())
 
 //Routers

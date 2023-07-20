@@ -1,0 +1,36 @@
+<%- include('./partials/header.ejs') %>
+<script defer src="/scripts/scripts.js"></script>
+
+    <h1 class="titulo-2">Crear Colaborador</h1>
+    <form action="/crear" method="POST" id="formulario">
+        <div>
+            <label for="">Nombre</label>
+            <input type="text" name="nombre" id="nombre">
+            <a id="errorTitulo" class="feedback"></a>
+        </div> 
+        <div>
+            <label for="">Equipo</label>
+            <input type="text" name="equipo" id="equipo">
+            <a id="errorPremios" class="feedback"></a>
+        </div>
+        <div>
+            <label for="">Versión Win | Os</label>
+            <input type="text" name="version_win_os" id="version_win_os">
+            <a id="errorDuracion" class="feedback"></a>
+        </div>
+        <div>
+            <label for="">Bitlocker | Filevault</label>
+            <input type="text" name="bitlocker_filevault" id="bitlocker_filevault">
+            <a id="errorRating" class="feedback"></a>
+        </div>
+        <div>
+            <label for="">Firewall</label>
+            <input type="text" name="firewall" id="firewall">
+            <a id="errorFecha" class="feedback"></a>
+        </div>
+        <div class="boton">
+        <button type="submit" class='button'>Crear!</button>
+        </div>
+    </form>
+
+<%- include('./partials/footer.ejs') %>

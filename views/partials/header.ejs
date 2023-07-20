@@ -11,14 +11,14 @@
                         <li>
                             <a href="/">Ver colaboradores</a>
                         </li>
-                    <% if (locals.user) { %>
-                        <% if (locals.user.rol == 1) { %>
+                    <% if (user) { %>
+                        <% if (user.rol == 1) { %>
                             <li>
                                 <a href="/crear">Crear Colaborador</a>
                             </li>
                         <% } %>
                     <% } %>
-                    <% if (locals.user) { %>
+                    <% if (user) { %>
                             <li>
                                 <a href="/users/logout">Cerrar sesión</a>
                             </li>   
