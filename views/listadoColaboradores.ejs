@@ -1,5 +1,13 @@
 <%- include('./partials/header.ejs') %>
+<link rel="stylesheet" href="../stylesheets/style.css">
+<script defer src="/scripts/scripts.js"></script>
 <h2 class="titulo-2">Listado de Colaboradores</h2>
+<div class="buscar-titulo">
+    <form action="/colaboradores/buscar" method="POST">
+        <input type="text" name="nombre" id="nombre">
+        <button class="boton-buscar" type="submit">Buscar</button>
+    </form>
+</div>
 <ul class="pelis">
     <% for (let i = 0; i < colaboradores.length; i++) { %>
         <li>

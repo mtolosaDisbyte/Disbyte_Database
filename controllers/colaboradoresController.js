@@ -1,4 +1,5 @@
 let db = require('../database/models');
+const fetch = require('node-fetch');
 
 let colaboradoresController = {
     crear: function (req, res) {
@@ -16,6 +17,16 @@ let colaboradoresController = {
             firewall: req.body.firewall,
         })
         res.redirect("/");
+    },
+    buscar: async function (req,res) {
+        console.log(req.query.q)
+        db.Colaborador.findOne({
+            where:{
+                name:{
+                    [Op.like] : '%' + req.query.q +'%'
+                }
+            }
+        })
     },
     listado: function (req, res) {
         // console.log(res.locals)
