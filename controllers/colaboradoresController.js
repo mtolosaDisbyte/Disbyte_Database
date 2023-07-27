@@ -1,10 +1,11 @@
 let db = require('../database/models');
+const { Op } = require('sequelize');
 const fetch = require('node-fetch');
 
 let colaboradoresController = {
     crear: function (req, res) {
         db.Colaborador.findAll()
-            .then(function (generos) {
+            .then(function () {
                 return res.render('creacionColaboradores');
             })
     },
@@ -20,13 +21,15 @@ let colaboradoresController = {
     },
     buscar: async function (req,res) {
         console.log(req.query.q)
-        db.Colaborador.findOne({
+        let query = null
+        let colaboradores = await db.Colaborador.findAll({
             where:{
-                name:{
+                nombre:{
                     [Op.like] : '%' + req.query.q +'%'
                 }
             }
         })
+        return res.render("partials/colaboradores" , {colaboradores,query})
     },
     listado: function (req, res) {
         // console.log(res.locals)

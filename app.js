@@ -38,6 +38,7 @@ const usersRouter = require('./routes/users');
 const middleware = require('./middlewares/userAdmin');
 app.use('/', colaboradoresRouter);
 app.use('/users', usersRouter);
+app.use("/api", require('./routes/api/colaboradoresApiRoutes'));
 
 //json
 app.use(express.json());

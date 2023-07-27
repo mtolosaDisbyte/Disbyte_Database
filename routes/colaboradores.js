@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const colaboradoresController = require('../controllers/colaboradoresController');
-const isAdmin = require('../middlewares/userAdmin')
+const isAdmin = require('../middlewares/userAdmin');
+const controller = require('../controllers/usuariosController');
 
 
 //Creación
@@ -12,6 +13,7 @@ router.post('/crear', colaboradoresController.guardado);
 //Lectura
 
 router.get('/', colaboradoresController.listado);
+router.get('/buscar', colaboradoresController.buscar)
 
 //Detalle
 

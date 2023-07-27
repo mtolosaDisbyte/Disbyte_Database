@@ -1,0 +1,26 @@
+<%- include('./header.ejs') %>
+
+<script defer src= "../../public/scripts/scripts.js"></script>
+
+<body>
+
+
+    <main id="main-products">
+        
+        <% if (colaboradores.length > 0) { %>
+            <ul class="product-list">
+                <% colaboradores.forEach(Colaborador => { %>
+                    <%- include("../colaborador.ejs", {Colaborador:Colaborador}) %> 
+                <% }) %>
+            </ul>
+            <% } else { %>
+            <h2>NO HAY COLABORADORES</h2>
+        <% } %>
+        
+    </main>
+
+    <footer id="footer">
+        <%- include("./footer.ejs") %> 
+    </footer>
+</body>
+</html>

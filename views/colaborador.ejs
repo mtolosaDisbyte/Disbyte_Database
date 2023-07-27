@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="../stylesheets/style.css">
+<script defer src="/scripts/scripts.js"></script>
+<h2 class="titulo-2">Listado de Colaboradores</h2>
+<div class="buscar-titulo">
+    <form action="/buscar" method="get" id="search">
+        <input type="text" name="q" id="searchInput" placeholder="Buscar..." list="listProducts" autocomplete="off">
+        <nav id="listProducts">
+
+        </nav>
+        <label for="q"><i class="fa-solid fa-search"></i></label>
+        <button type="submit"><a href="/"><i class="fa-solid fa-search"></i></a></button>
+    </form>
+</div>
+<table class="table table-bordered table-striped text-center mt-4">
+<thead>
+    <tr class="bg-primary text-white">
+        <th scope="col">ID</th>
+        <th scope="col">NOMBRE</th>
+        <th scope="col">EQUIPO</th>
+        <th scope="col">VERSION WIN|OS</th>
+        <th scope="col">BITLOCKER|FILEVAULT</th>
+        <th scope="col">FIREWALL</th>
+    </tr>
+</thead>
+<tbody>
+    <% colaboradores.forEach((colaboradores) => { %>
+    <tr>
+        <td><%=colaboradores.id%></td>
+        <td><%=colaboradores.nombre%></td>
+        <td><%=colaboradores.equipo%></td>
+        <td><%=colaboradores.version_win_os%></td>
+        <td><%=colaboradores.bitlocker_filevault%></td>
+        <td><%=colaboradores.firewall%></td>
+    </tr>
+    <% }) %>
+</tbody>
+</table>
+<ul class="pelis">
+    <% for (let i = 0; i < colaboradores.length; i++) { %>
+        <li>
+            <a href="/detalle/<%=colaboradores[i].id%>">
+            <%=colaboradores[i].nombre %>
+            </a>
+        </li>
+    <% } %>
+</ul>
