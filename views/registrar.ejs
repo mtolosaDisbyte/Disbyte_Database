@@ -1,23 +1,30 @@
 <%- include('./partials/header.ejs') %>
-
+<section class="container d-flex justify-content-center">
+<div class="row my-5 shadow p-3 mb-5 bg-body-secondary rounded">
+    <div class="col-sm-12 col-md-12 col-lg-12">
     <h1 class="titulo-2">Registrarse</h1>
     <form action="/users/registrar" method="POST">
-        <div>
-            <label for="">Nombre</label>
-            <input type="text" name="name">
+        <div class="mb-3">
+            <label for="" class="form-label"></label>
+            <input type="text" name="name" placeholder="Nombre" class="form-control">
         </div> 
-        <div>
-            <label for="">Email</label>
-            <input type="email" name="email">
+        <div class="mb-3">
+            <label for="" class="form-label"></label>
+            <input type="email" name="email" placeholder="Email" class="form-control">
         </div>
-        <div>
-            <label for="">Contraseña</label>
-            <input type="password" name="password">
+        <div class="mb-3">
+            <label for="" class="form-label"></label>
+            <input type="password" name="password" placeholder="Contraseña" class="form-control">
         </div>
-        <input type="hidden" name="rol">
-        <div class="boton">
-        <button type="submit">Registrarse!</button>
+        <input type="hidden" name="rol" class="form-control">
+        <div class="mb-3 d-flex justify-content-center mt-4">
+        <button class="btn btn-primary" type="submit">Registrarse!</button>
+        </div>
+        <div class="container mt-4">
+            <h6>Ya tienes cuenta? <a href="/users/login">Iniciar Sesión</a></h6>
         </div>
     </form>
-
+</div>
+</div>
+</section>
 <%- include('./partials/footer.ejs') %>

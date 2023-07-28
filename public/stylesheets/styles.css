@@ -1,0 +1,12 @@
+.botones{
+    display: flex;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+
+}
+.container-fluid {
+    margin-top: auto;
+}

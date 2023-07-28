@@ -6,7 +6,7 @@ module.exports = {
         let colaboradoresNuevos = []
         return res.status(200).json({
             total: colaboradores.length,
-            data: colaboradoresNuevos,
+            data: colaboradores,
             status: 200
         })
     }

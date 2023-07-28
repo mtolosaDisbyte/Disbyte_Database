@@ -5,6 +5,7 @@ const session = require('express-session');
 const method = require('method-override');
 const cookie = require('cookie-parser')
 const sessionMiddleware = require("./middlewares/user")
+const islogged =require("./middlewares/islogged")
 
 //server
 app.listen(3000, () => {
@@ -30,6 +31,7 @@ app.use(session({
 }))
 
 app.use(sessionMiddleware)
+app.use(islogged)
 app.use(cookie())
 
 //Routers

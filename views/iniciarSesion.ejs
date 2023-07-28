@@ -1,20 +1,26 @@
 <%- include('./partials/header.ejs') %>
-
-<div class="container">
-    <h1 class="titulo-2">Iniciar Sesión</h1>
-    <form action="/users/acceso" method="POST">
-        <div>
-            <label for=""></label>
-            <input type="email" name="email" placeholder="nombre@ejemplo.com">
-        </div>
-        <div>
-            <label for=""></label>
-            <input type="password" name="password" placeholder="Contraseña">
-        </div>
-        <input type="hidden" name="cookie" value="true">
-        <div class="boton">
-        <button type="submit">Iniciar Sesión!</button>
-        </div>
-    </form>
+<section class="container d-flex justify-content-center">
+<div class="row my-5 shadow p-3 mb-5 bg-body-secondary rounded">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+    <h1 class="">Iniciar Sesión</h1>
+        <form action="/users/acceso" method="POST">
+            <div class="mb-3">
+                <label class="form-label" for=""></label>
+                <input type="email" name="email" placeholder="nombre@ejemplo.com" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for=""></label>
+                <input type="password" name="password" placeholder="Contraseña" class="form-control">
+            </div>
+                <input type="hidden" name="cookie" value="true" class="form-control">
+                <div class="mb-3 d-flex justify-content-center mt-4">
+                    <button class="btn btn-primary" type="submit">Iniciar Sesión!</button>
+                </div>
+                <div class="container mt-4">
+                    <h6>No tienes cuenta? <a href="/users/registrar">Registrarse</a></h6>
+                </div>
+        </form>
+    </div>
 </div>
+</section>
 <%- include('./partials/footer.ejs') %>
