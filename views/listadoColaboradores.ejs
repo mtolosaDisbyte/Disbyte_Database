@@ -1,34 +1,36 @@
 <%- include('./partials/header.ejs') %>
 <script defer src="/scripts/scripts.js"></script>
+<div class="home-div">
     <div class="container">
-        <h2 class="h2 p-2 bg-secondary shadow p-3 mb-5 rounded">Colaboradores</h2>
+        <h2 class="h2 p-2 bg-dark shadow p-3 rounded text-white">Colaboradores</h2>
     </div>    
-      <div class="container">
-      <form action="/buscar" method="get" id="search">
-        <input type="text" name="q" id="searchInput" placeholder="Buscar..." list="listProducts" autocomplete="off">
-        <nav id="listProducts">
+    <div class="container my-auto">
+        <form action="/buscar" method="get" id="search">
+            <input type="text" name="q" id="searchInput" placeholder="Buscar..." list="listProducts" autocomplete="off">
+            <nav id="listProducts">
 
-        </nav>
-        <label for="q"><i class="fa-solid fa-search"></i></label>
-    </form>
+            </nav>
+            <label for="q"><i class="fa-solid fa-search"></i></label>
+        </form>
     </div>
-<div class="container shadow p-2 mb-2 bg-body-tertiary rounded">    
-<table id="colaboradores" class="table table-bordered table-light table-striped text-center table-bg-scale: 80% mt-4">
-<thead class="table-dark">
-    <tr class="bg-primary text-white">
-        <th scope="col">ID</th>
-        <th scope="col">NOMBRE</th>
-        <th scope="col">EQUIPO</th>
-        <th scope="col">VERSION WIN|OS</th>
-        <th scope="col">BITLOCKER|FILEVAULT</th>
-        <th scope="col">FIREWALL</th>
-    <% if (locals.user) { %>
-        <% if (user.rol == 1) { %>
-            <th scope="col">ACCIONES</th>
-    <% } %>
+    <div class="container shadow p-2 mb-2 my-auto bg-body-tertiary rounded">    
+        <table id="colaboradores" class="table table-bordered table-light table-striped text-center table-bg-scale: 80% my-0">
+            <thead class="table-dark">
+            <tr class="bg-primary text-white">
+                <th scope="col">ID</th>
+                <th scope="col">NOMBRE</th>
+                <th scope="col">EQUIPO</th>
+                <th scope="col">VERSION WIN|OS</th>
+                <th scope="col">BITLOCKER|FILEVAULT</th>
+                <th scope="col">FIREWALL</th>
+        <% if (locals.user) { %>
+            <% if (user.rol == 1) { %>
+                <th scope="col">ACCIONES</th>
         <% } %>
-    </tr>
-</thead>
-</table>
+            <% } %>
+            </tr>
+            </thead>
+        </table>
+    </div>
 </div>
 <%- include('./partials/footer') %>

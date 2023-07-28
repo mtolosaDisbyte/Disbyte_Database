@@ -21,7 +21,7 @@ window.addEventListener('load', async() => {
                             <a href="/editar/${colaborador.id}">
                                     <button class="btn btn-outline-success btn-sm">Editar</button> 
                             </a>  
-                            <form action="/borrar/${colaborador.id}" method="POST" style="margin: auto;";">
+                            <form class="Borrar" action="/borrar/${colaborador.id}" method="POST">
                                     <button type="submit" class="btn btn-outline-danger btn-sm">Borrar</button>
                             </form>
                 </td>
@@ -53,4 +53,5 @@ document.querySelector('#searchInput').addEventListener('input', async(e) => {
     })
     table.innerHTML += render(filtrado)
 })
+
 })

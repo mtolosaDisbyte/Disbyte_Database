@@ -1,8 +1,8 @@
 <%- include('./partials/header.ejs') %>
 <section class="container d-flex justify-content-center">
-<div class="row my-5 shadow p-3 mb-5 bg-body-secondary rounded">
-    <div class="col-sm-12 col-md-12 col-lg-12">
-    <h1 class="">Iniciar Sesión</h1>
+<div class="row shadow p-3 my-auto bg-dark rounded">
+    <div class="div-img">
+        <h1 class="text-white">Iniciar Sesión</h1>
         <form action="/users/acceso" method="POST">
             <div class="mb-3">
                 <label class="form-label" for=""></label>
@@ -17,7 +17,7 @@
                     <button class="btn btn-primary" type="submit">Iniciar Sesión!</button>
                 </div>
                 <div class="container mt-4">
-                    <h6>No tienes cuenta? <a href="/users/registrar">Registrarse</a></h6>
+                    <h6 class="text-white">No tienes cuenta? <a href="/users/registrar">Registrarse</a></h6>
                 </div>
         </form>
     </div>
