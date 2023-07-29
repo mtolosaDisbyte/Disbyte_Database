@@ -67,7 +67,7 @@ let colaboradoresController = {
                 id: req.params.id
             }
         })
-        res.redirect("/detalle/" + req.params.id)
+        res.redirect("/")
     },
     borrar: function (req, res) {
         db.Colaborador.destroy({

@@ -1,34 +1,41 @@
 <%- include('./partials/header.ejs') %>
+<section class="container d-flex justify-content-center">
+    <div class="row shadow p-3 my-auto bg-dark rounded">
+        <div class="div-img">
+        <h1 class="text-white">Editar Colaborador</h1>
+        <form action="/editar/<%=colaborador.id%>" method="POST" id="formulario">
+            <div class="mb-3">
+                <label class="form-laber" for=""></label>
+                <input type="text" name="nombre" id="nombre" value="<%=colaborador.nombre%>" class="form-control">
+                <a id="errorTitulo" class="feedback"></a>
+            </div> 
+            <div class="mb-3">
+                <label for=""></label>
+                <input type="text" name="equipo" id="equipo" value="<%=colaborador.equipo%>" class="form-control">
+                <a id="errorPremios" class="feedback"></a>
+            </div>
+            <div class="mb-3">
+                <label class="form-laber" for=""></label>
+                <input type="text" name="version_win_os" id="version_win_os" value="<%=colaborador.version_win_os%>" class="form-control">
+                <a id="errorDuracion" class="feedback"></a>
+            </div>
+            <div class="mb-3">
+                <label class="form-laber" for=""></label>
+                <input type="text" name="bitlocker_filevault" id="bitlocker_filevault" value="<%=colaborador.bitlocker_filevault%>" class="form-control">
+                <a id="errorRating" class="feedback"></a>
+            </div>
+            <div class="mb-3">
+                <label class="form-laber" for=""></label>
+                <input type="text" name="firewall" id="firewall" value="<%=colaborador.firewall%>" class="form-control">
+                <a id="errorFecha" class="feedback"></a>
+            </div>
+            <div class="mb-3 d-flex justify-content-center mt-4">
+            <button type="submit" class='btn btn-success'>EDITAR!</button>
+            </div>
+        </form>
+        </div>
+    </div>
+</section>
 
-    <h1 class="titulo-2">Editar colaborador</h1>
-    <form action="/editar/<%=colaborador.id%>" method="POST" id="formulario">
-        <div>
-            <label for="">Nombre</label>
-            <input type="text" name="nombre" value="<%=colaborador.nombre%>" id="nombre">
-            <a id="errorTitulo" class="feedback"></a>
-        </div> 
-        <div>
-            <label for="">Equipo</label>
-            <input type="text" name="equipo" value="<%=colaborador.equipo%>" id="equipo">
-            <a id="errorPremios" class="feedback"></a>
-        </div>
-        <div>
-            <label for="">Versión Win | Os</label>
-            <input type="text" name="version_win_os" value="<%=colaborador.version_win_os%>" id="version_win_os">
-            <a id="errorDuracion" class="feedback"></a>
-        </div>
-        <div>
-            <label for="">Bitlocker | Filevault</label>
-            <input type="text" name="bitlocker_filevault" value="<%=colaborador.bitlocker_filevault%>" id="bitlocker_filevault">
-            <a id="errorRating" class="feedback"></a>
-        </div>
-        <div>
-            <label for="">Firewall</label>
-            <input type="text" name="firewall" value="<%=colaborador.firewall%>" id="firewall">
-        </div>
-        <div>
-        <button type="submit">Editar!</button>
-        </div>
-    </form>
 
 <%- include('./partials/footer.ejs') %>

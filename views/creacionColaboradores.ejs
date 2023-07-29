@@ -1,36 +1,40 @@
 <%- include('./partials/header.ejs') %>
 <script defer src="/scripts/scripts.js"></script>
-
-    <h1 class="titulo-2">Crear Colaborador</h1>
-    <form action="/crear" method="POST" id="formulario">
-        <div>
-            <label for="">Nombre</label>
-            <input type="text" name="nombre" id="nombre">
-            <a id="errorTitulo" class="feedback"></a>
-        </div> 
-        <div>
-            <label for="">Equipo</label>
-            <input type="text" name="equipo" id="equipo">
-            <a id="errorPremios" class="feedback"></a>
+<section class="container d-flex justify-content-center">
+    <div class="row shadow p-3 my-auto bg-dark rounded">
+        <div class="div-img">
+        <h1 class="text-white">Crear Colaborador</h1>
+        <form action="/crear" method="POST" id="formulario">
+            <div class="mb-3">
+                <label class="form-laber" for=""></label>
+                <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form-control">
+                <a id="errorTitulo" class="feedback"></a>
+            </div> 
+            <div class="mb-3">
+                <label for=""></label>
+                <input type="text" name="equipo" id="equipo" placeholder="Equipo" class="form-control">
+                <a id="errorPremios" class="feedback"></a>
+            </div>
+            <div class="mb-3">
+                <label class="form-laber" for=""></label>
+                <input type="text" name="version_win_os" id="version_win_os" placeholder="Versión Win | Os" class="form-control">
+                <a id="errorDuracion" class="feedback"></a>
+            </div>
+            <div class="mb-3">
+                <label class="form-laber" for=""></label>
+                <input type="text" name="bitlocker_filevault" id="bitlocker_filevault" placeholder="Bitlocker | Filevault" class="form-control">
+                <a id="errorRating" class="feedback"></a>
+            </div>
+            <div class="mb-3">
+                <label class="form-laber" for=""></label>
+                <input type="text" name="firewall" id="firewall" placeholder="Firewall" class="form-control">
+                <a id="errorFecha" class="feedback"></a>
+            </div>
+            <div class="mb-3 d-flex justify-content-center mt-4">
+            <button type="submit" class='btn btn-success'>CREAR!</button>
+            </div>
+        </form>
         </div>
-        <div>
-            <label for="">Versión Win | Os</label>
-            <input type="text" name="version_win_os" id="version_win_os">
-            <a id="errorDuracion" class="feedback"></a>
-        </div>
-        <div>
-            <label for="">Bitlocker | Filevault</label>
-            <input type="text" name="bitlocker_filevault" id="bitlocker_filevault">
-            <a id="errorRating" class="feedback"></a>
-        </div>
-        <div>
-            <label for="">Firewall</label>
-            <input type="text" name="firewall" id="firewall">
-            <a id="errorFecha" class="feedback"></a>
-        </div>
-        <div class="boton">
-        <button type="submit" class='button'>Crear!</button>
-        </div>
-    </form>
-
+    </div>
+</section>
 <%- include('./partials/footer.ejs') %>
