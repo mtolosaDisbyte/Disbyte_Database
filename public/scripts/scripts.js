@@ -1,3 +1,18 @@
+function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+ }
 window.addEventListener('load', async() => {
     let peticion = await fetch('http://localhost:3000/api/list')
 
@@ -5,8 +20,17 @@ window.addEventListener('load', async() => {
 
     let Colaboradores = respuesta.data
 
+    let question = await fetch('http://localhost:3000/api/list')
+
+    let answer = await question.json()
+
+    let Usuarios = answer.data
+
+    let usuario = Usuarios.find( u => u.email == getCookie("user"))
+
     let table = document.querySelector('#colaboradores')
     function render(colaboradores) {
+        console.log(getCookie("user"))
         let acumulador = "<tbody>"
         colaboradores.forEach(colaborador => {
             acumulador += `
@@ -17,15 +41,18 @@ window.addEventListener('load', async() => {
                 <td>${colaborador.area}</td>
                 <td>${colaborador.puesto}</td>
                 <td class="botones">        
-                            <a href="/editar/${colaborador.id}">
-                                    <button class="btn btn-outline-success btn-sm">Editar</button> 
-                            </a>  
-                            <form class="Borrar" action="/borrar/${colaborador.id}" method="POST">
-                                    <button type="submit" class="btn btn-outline-danger btn-sm">Borrar</button>
-                            </form>
+                ${
+                    usuario.rol == 1 ?
+                    `<a href="/editar/${colaborador.id}">
+                    <button class="btn btn-outline-success btn-sm">Editar</button> 
+            </a>  
+            <form class="Borrar" action="/borrar/${colaborador.id}" method="POST">
+                    <button type="submit" class="btn btn-outline-danger btn-sm">Borrar</button>
+            </form>` : ""
+                }
                             <a href="/detalle/${colaborador.id}" class="info">
                             <button type="button" class="btn btn-outline-primary btn-sm ">Info</button>
-                            </a> 
+                            </a>
                 </td>
             </tr>
         `
