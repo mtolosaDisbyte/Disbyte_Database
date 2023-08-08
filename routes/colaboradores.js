@@ -24,6 +24,8 @@ router.get('/detalle/:id', colaboradoresController.detalle);
 router.get('/editar/:id', colaboradoresController.editar);
 router.post('/editar/:id', colaboradoresController.actualizar);
 
+router.get('/editarD/:id', colaboradoresController.editarD);
+router.post('/editarD/:id', colaboradoresController.actualizar);
 //Borrado
 
 router.post('/borrar/:id', colaboradoresController.borrar);

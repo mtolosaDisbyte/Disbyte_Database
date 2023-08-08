@@ -54,6 +54,14 @@ let colaboradoresController = {
                 res.render('editarColaborador', {colaborador:colaborador});
             })
     },
+    editarD: function (req, res) {
+        let pedidoColaborador = db.Colaborador.findByPk(req.params.id)
+
+        Promise.all([pedidoColaborador])
+            .then(function([colaborador]) {
+                res.render('editarDColaborador', {colaborador:colaborador});
+            })
+    },
     actualizar: function (req, res) {
         //console.log(req.query)
         db.Colaborador.update({
@@ -62,6 +70,8 @@ let colaboradoresController = {
             version_win_os: req.body.version_win_os,
             bitlocker_filevault: req.body.bitlocker_filevault,
             firewall: req.body.firewall,
+            area: req.body.area,
+            puesto: req.body.puesto
         }, {
             where: {
                 id: req.params.id

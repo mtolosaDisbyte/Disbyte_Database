@@ -21,6 +21,12 @@ module.exports = function(sequelize, dataTypes) {
         },
         firewall: {
             type: dataTypes.STRING
+        },
+        area: {
+            type: dataTypes.STRING
+        },
+        puesto: {
+            type: dataTypes.STRING
         }
     }
     let config = {

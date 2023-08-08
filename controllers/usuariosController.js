@@ -21,10 +21,9 @@ const controller = {
     acceso:(req,res) => {
         db.users.findOne({where:{email:req.body.email}})
             .then((user) => {
+                //res.cookie('x', user.rol,{maxAge: 1000 * 60 * 10})
                 req.session.user = user
-                if (req.body.cookie){
-                    res.cookie('user', req.body.email,{maxAge: 1000 * 60 * 10})
-                }
+                   res.cookie('user', req.body.email,{maxAge: 1000 * 60 * 30})
                 return res.redirect('/')
 
             })

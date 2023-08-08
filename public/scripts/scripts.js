@@ -10,13 +10,12 @@ window.addEventListener('load', async() => {
         let acumulador = "<tbody>"
         colaboradores.forEach(colaborador => {
             acumulador += `
-            <tr>
+           <tr>
                 <td>${colaborador.id}</td>
                 <td>${colaborador.nombre}</td>
                 <td>${colaborador.equipo}</td>
-                <td>${colaborador.version_win_os}</td>
-                <td>${colaborador.bitlocker_filevault}</td>
-                <td>${colaborador.firewall}</td>
+                <td>${colaborador.area}</td>
+                <td>${colaborador.puesto}</td>
                 <td class="botones">        
                             <a href="/editar/${colaborador.id}">
                                     <button class="btn btn-outline-success btn-sm">Editar</button> 
@@ -24,6 +23,9 @@ window.addEventListener('load', async() => {
                             <form class="Borrar" action="/borrar/${colaborador.id}" method="POST">
                                     <button type="submit" class="btn btn-outline-danger btn-sm">Borrar</button>
                             </form>
+                            <a href="/detalle/${colaborador.id}" class="info">
+                            <button type="button" class="btn btn-outline-primary btn-sm ">Info</button>
+                            </a> 
                 </td>
             </tr>
         `
@@ -39,19 +41,17 @@ document.querySelector('#searchInput').addEventListener('input', async(e) => {
         <th scope="col">ID</th>
         <th scope="col">NOMBRE</th>
         <th scope="col">EQUIPO</th>
-        <th scope="col">VERSION WIN|OS</th>
-        <th scope="col">BITLOCKER|FILEVAULT</th>
-        <th scope="col">FIREWALL</th>
+        <th scope="col">AREA</th>
+        <th scope="col">PUESTO</th>
         <th scope="col">ACCIONES</th>
     </tr>
 </thead>`
     let filtrado = Colaboradores.filter(colaborador => {
         return (colaborador.id == e.target.value) || 
         (colaborador.nombre.toLowerCase().trim().includes(e.target.value.toLowerCase().trim())) || 
-        (colaborador.equipo.toLowerCase().trim().includes(e.target.value.toLowerCase().trim())) ||
-        (colaborador.version_win_os.toLowerCase().trim().includes(e.target.value.toLowerCase().trim()))
+        (colaborador.area.toLowerCase().trim().includes(e.target.value.toLowerCase().trim())) ||
+        (colaborador.puesto.toLowerCase().trim().includes(e.target.value.toLowerCase().trim()))
     })
     table.innerHTML += render(filtrado)
 })
-
 })

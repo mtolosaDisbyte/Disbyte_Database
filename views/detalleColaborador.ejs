@@ -1,33 +1,43 @@
 <%- include('./partials/header.ejs') %>
-
-<h1 class="titulo-2"><%=colaborador.nombre%></h1>
-<ul class="detalle">
-    <li>
-       Equipo: <%=colaborador.equipo%>
-    </li>
-    <li>
-        Version Win | Os: <%=colaborador.version_win_os%>
-    </li>
-    <li>
-        Bitlocker | filevault: <%=colaborador.bitlocker_filevault%>
-    </li>
-    <li>
-        Firewall: <%=colaborador.firewall%>
-    </li>
-<% if (locals.user) { %>
-    <% if (user.rol == 1) { %>
-     
-        <a class= "editar" href="/editar/<%=colaborador.id%>">
-            <div class="detalle-boton">
-                <button>Editar</button>
-            </div>  
-        </a>
-        
-        <form action="/borrar/<%=colaborador.id%>" method="POST">
-            <p class="detalle-boton">
-                <button type="submit">Borrar</button>
-            </p>
-        </form>
-    <% } %>
-<% } %>
+<script defer src="/scripts/detalle.js"></script>
+<div class="home-div">
+    <div class="container">
+        <h2 class="h2 p-2 bg-dark shadow p-3 rounded text-white">Colaborador</h2>
+    </div>
+    <div class="container shadow p-2 mb-2 my-auto bg-body-tertiary rounded" style="width: 60%;">    
+        <table id="colaboradores" class="table table-bordered table-light table-striped text-center table-bg-scale: 60% my-0">
+            <thead class="table-dark">
+            <tr class="bg-primary text-white">
+                <th scope="col">ID</th>
+                <th scope="col">NOMBRE</th>
+                <th scope="col">EQUIPO</th>
+                <th scope="col">VERSION WIN|OS</th>
+                <th scope="col">BITLOCKER|FILEVAULT</th>
+                <th scope="col">FIREWALL</th>
+                <th scope="col">ACCIONES</th>   
+            </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                        <td><%=colaborador.id%></td>
+                        <td><%=colaborador.nombre%></td>
+                        <td><%=colaborador.equipo%></td>
+                        <td><%=colaborador.version_win_os%></td>
+                        <td><%=colaborador.bitlocker_filevault%></td>
+                        <td><%=colaborador.firewall%></td>
+                        <td class="botones">        
+                            <a href="/editarD/<%=colaborador.id%>">
+                                    <button class="btn btn-outline-success btn-sm">Editar</button> 
+                            </a>
+                            <form class="Borrar" action="/borrar/<%=colaborador.id%>" method="POST">
+                                <button type="submit" class="btn btn-outline-danger btn-sm">Borrar</button>
+                            </form>
+                        </tr>
+                    </tr>
+                </tbody>
+                </table>
+            </tbody>
+        </table>
+    </div>
+</div>
 <%- include('./partials/footer.ejs') %>
