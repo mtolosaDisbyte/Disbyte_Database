@@ -41,6 +41,7 @@ const middleware = require('./middlewares/userAdmin');
 app.use('/', colaboradoresRouter);
 app.use('/users', usersRouter);
 app.use("/api", require('./routes/api/colaboradoresApiRoutes'));
+app.use("/api/", require('./routes/api/usuariosApiRoutes'));
 
 //json
 app.use(express.json());
